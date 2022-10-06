@@ -1,0 +1,260 @@
+
+html {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
+}
+
+body {
+	margin: 0;
+}
+
+img {
+	display: block;
+	border: 0;
+	width: 100%;
+	height: auto;
+}
+
+
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 3;
+}
+
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	padding: 1em 0;
+}
+
+p {
+	margin: 0;
+	padding: 1em 0;
+}
+
+/*--------------------------------------------------------------
+General styles
+--------------------------------------------------------------*/
+
+.masthead {
+  padding: 2em;
+  background: #272427;
+  text-align: center;
+}
+
+.masthead img {
+  width: 180px;
+  margin: 0 auto;
+}
+
+.site-title {
+  margin: 1em 0 0;
+  padding: 0;
+  font-size: 1.5625em;
+  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgb(165, 126, 86);
+}
+
+.site-description {  
+  margin: 0 0 1em;
+  padding: 0;
+  font-size: 1em;
+  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.422);
+}
+
+.main-title {
+  text-align: center;
+  background-image: url(https://2017.europe.wordcamp.org/files/2017/01/background-pattern-01.png);
+  background-color: #f5ebe0
+}
+
+.main-content {
+	background: white;
+  padding: 2em;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.list li {
+  margin: .5em 0;
+  padding: 1em 0;
+  border-bottom: 1px dotted black;
+}
+
+.list li:last-child {
+  border-bottom: none;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+ 
+}
+
+.name {
+  margin: .5em 0;
+  padding: 1;
+  
+}
+
+.time {
+  margin: .5em 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.sidebar {
+  background: #272427;
+}
+
+.info {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: white;
+}
+
+.info li {
+  padding: 1em;
+  text-align: center;
+}
+
+.acess {
+  color: #272427;
+  background: #f1e4d5;
+}
+
+.code {
+  background: #f6c167;
+}
+
+.contact {
+  background: #6a4c19;
+}
+
+.faq {
+  background: #9f6a35;
+}
+
+.footer {
+	padding: 1em 2em;
+  background: #272427;
+	color: white;
+}
+
+.footer a {
+	color: white;
+}
+
+.footer a:hover,
+.footer a:focus {
+	border-bottom: 1px solid white;
+}
+
+
+@supports not (display: grid) {
+	.main-title,
+  .main-content,
+  .sidebar {
+		max-width: 50em;
+		margin: 0 auto;
+	}
+}
+
+
+@supports (display: grid) {
+  @media screen and (min-width: 800px) {
+    
+  	.site {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr 3fr;
+      grid-template-areas:
+        "content-head content-head"
+        "main header"
+        "main sidebar"
+        "footer footer";
+		}
+    
+    .head {
+      grid-area: header;
+    }
+    
+    .main-title {
+      grid-area: content-head;
+    }
+    
+    .main-content {
+      grid-area: main;
+    }
+    
+    .sidebar {
+      grid-area: sidebar;
+    }
+		
+    .footer {
+      grid-area: footer;
+    }
+    
+	}
+  
+  @media screen and (min-width: 1200px) {
+    .site {
+			grid-template-columns: 2fr 1fr 1fr;
+      grid-template-areas:
+        "content-head content-head content-head"
+        "main header header"
+        "main sidebar footer";
+		}
+  }
+}
